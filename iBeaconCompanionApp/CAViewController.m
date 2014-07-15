@@ -49,7 +49,7 @@
 //{
 //    [self.immediateBeaconsTableView reloadData];
 //}
-
+#pragma mark - Table Update Methods
 - (void)immediateAndNearBeaconsReceived: (NSMutableArray *) beacons
 {
     self.beaconsToDraw = beacons;
@@ -85,15 +85,10 @@
             cell = [[CABeaconTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:MyIdentifier];
         }
         
-//        self.beaconsInRange = [[NSMutableArray alloc] initWithArray:self.tracker.beaconsSet];
         NSUInteger index = [indexPath indexAtPosition:[indexPath length] - 1];;
         if(index == [self.beaconsToDraw count])
             index--;
         CLBeacon  *beacon = [self.beaconsToDraw objectAtIndex:index];
-        //    UILabel *majorMinor = (UILabel*) [cell viewWithTag:1000];
-        //    UILabel *rssiLabel = (UILabel*) [cell viewWithTag:1001];
-        //    [title setText:[ tableMainTitle objectAtIndex:indexPath.row]];
-        //    [summary setText:[ tableSubTitle objectAtIndex:indexPath.row]];
         NSString *distance = @"";
         switch (beacon.proximity) {
             case CLProximityNear:
@@ -116,8 +111,6 @@
                 break;
         }
         
-//        cell.detailTextLabel.text =[NSString stringWithFormat:@"RSSI: %li", beacon.rssi];
-//        cell.accuracyLabel.text =[NSString stringWithFormat:@"Accuracy: %f", beacon.accuracy];
         return cell;
     }
     else

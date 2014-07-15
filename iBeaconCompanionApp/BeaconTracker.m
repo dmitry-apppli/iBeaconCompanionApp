@@ -28,21 +28,10 @@
         self.immediateBeacons = [[NSMutableArray alloc] init];
         [self.locationManager startRangingBeaconsInRegion:self.beaconRegion];
         NSLog(@"initilized");
-//        [NSTimer scheduledTimerWithTimeInterval:0.3f
-//                                         target:self
-//                                       selector:@selector(getClosestBeacon)
-//                                       userInfo:nil
-//                                        repeats:YES];
     }
     return self;
 
 }
-//-(void)getClosestBeacon
-//{
-//    for(CLBeacon*b in self.immediateBeacons)
-//        NSLog(@"Immediate: %@.%@", b.major, b.minor);
-//}
-
 
 - (void)initRegion {
     NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:ACTIVE_UUID];
@@ -63,7 +52,7 @@
     NSLog(@"exit");
 }
 
--(NSMutableArray *)sortBeaconsInOrder: (bool) ascending
+-(NSMutableArray *)sortedBeaconsInOrder: (bool) ascending
 {
     NSSortDescriptor *majorSorter = [[NSSortDescriptor alloc] initWithKey:@"major" ascending:ascending];
     NSSortDescriptor *minorSorter = [[NSSortDescriptor alloc] initWithKey:@"minor" ascending:ascending];
@@ -102,8 +91,8 @@
                 break;
         }
     }
-    [_delegate immediateAndNearBeaconsReceived:[self sortBeaconsInOrder: NO]];
-    NSLog(@"Delegate Called");
+    [_delegate immediateAndNearBeaconsReceived:[self sortedBeaconsInOrder: NO]];
+    //[NSThread sleepForTimeInterval:5];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
@@ -132,8 +121,9 @@
     if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
     NSDictionary *beaconServerData;
     NSArray* JSONArray = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
-    for(int i=0; i<[JSONArray count];i++){
-        beaconServerData= [JSONArray objectAtIndex:i];
+    for(int i=0; i<[JSONArray count];i++)
+    {
+        beaconServerData = [JSONArray objectAtIndex:i];
     }
     return beaconServerData;
 }

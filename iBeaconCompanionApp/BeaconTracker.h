@@ -24,7 +24,6 @@
 @property (strong, nonatomic) NSMutableArray *immediateBeacons;
 @property (nonatomic, weak) id <BeaconTrackerDelegate> delegate;
 
--(NSMutableArray *)sortBeaconsInOrder: (bool) ascending;
+-(NSMutableArray *)sortedBeaconsInOrder: (bool) ascending;
 +(NSDictionary *)getParsedJSONFromHTTPRequestUsingPOST:(NSString *)URL Data:(NSString *)HTTPData;
-+(void)sortBeacons: (NSMutableArray *)beacons inOrder:(bool) ascending;
 @end
