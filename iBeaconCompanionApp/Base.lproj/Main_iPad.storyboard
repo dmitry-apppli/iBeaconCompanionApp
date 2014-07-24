@@ -4,39 +4,16 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Details View Controller-->
-        <scene sceneID="8cv-K6-4kn">
-            <objects>
-                <viewController id="fhu-8q-kpl" customClass="CADetailsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="peB-US-gTd"/>
-                        <viewControllerLayoutGuide type="bottom" id="KcI-a3-va2"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5JF-Um-uS9">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fIi-LF-0oT">
-                                <rect key="frame" x="5" y="0.0" width="768" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hbd-ea-1HO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="838" y="241"/>
-        </scene>
-        <!--View Controller-->
+        <!--Select BeaconVC-->
         <scene sceneID="GTm-B6-ggi">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="NqI-Ow-4mn" customClass="CAViewController" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kpz-sv-Vgq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="NqI-Ow-4mn" customClass="CASelectBeaconVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gah-ot-K3y">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="immediateBeacons" id="s6r-Eb-lDg" customClass="CABeaconTableViewCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
@@ -79,18 +56,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="13u-cp-30x"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="immediateBeaconsTableView" destination="gah-ot-K3y" id="y69-Cw-oeN"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kpz-sv-Vgq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1372" y="-695"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bvI-a5-S7z">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rpM-8b-fKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="4AP-YV-5az" sceneMemberID="viewController">
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="wRT-lJ-AlO">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -98,23 +77,44 @@
                         <segue destination="NqI-Ow-4mn" kind="relationship" relationship="rootViewController" id="Wpe-sY-Tc5"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rpM-8b-fKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="838" y="-696"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="wYc-e8-d8C">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zHD-Iv-qAn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <splitViewController id="z8p-vM-gcm" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <segue destination="4AP-YV-5az" kind="relationship" relationship="masterViewController" id="Dxh-g2-6Ws"/>
-                        <segue destination="fhu-8q-kpl" kind="relationship" relationship="detailViewController" id="dyS-f1-cO5"/>
+                        <segue destination="QpM-be-T63" kind="relationship" relationship="detailViewController" id="dtu-Px-CnF"/>
                     </connections>
                 </splitViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zHD-Iv-qAn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-144" y="-229"/>
+        </scene>
+        <!--DetailsVC-->
+        <scene sceneID="YlE-8G-qTx">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Xs-5m-ieE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="QpM-be-T63" customClass="CADetailsVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lls-OJ-8TR"/>
+                        <viewControllerLayoutGuide type="bottom" id="bDQ-kD-sks"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FQ8-cl-zx1">
+                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="977" y="-27"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

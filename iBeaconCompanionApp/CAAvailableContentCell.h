@@ -1,13 +1,13 @@
 //
-//  CADetailsViewController.h
+//  CAAvailableContentCell.h
 //  iBeaconCompanionApp
 //
-//  Created by Dmitry on 15/07/2014.
+//  Created by Dmitry on 22/07/2014.
 //  Copyright (c) 2014 Apppli ltd. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface CADetailsViewController : UIViewController
+@interface CAAvailableContentCell : UITableViewCell
 
 @end

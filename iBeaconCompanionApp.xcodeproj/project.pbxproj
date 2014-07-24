@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		FAA445AB1973E80D00FE4B2A /* BeaconTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA445AA1973E80D00FE4B2A /* BeaconTracker.m */; };
 		FAA445AE1973E8B800FE4B2A /* Definitions.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA445AD1973E8B800FE4B2A /* Definitions.m */; };
+		FAAEED58197EBA9D003A5270 /* CAAvailableContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAEED57197EBA9D003A5270 /* CAAvailableContentCell.m */; };
+		FAAEED5B197EBAB1003A5270 /* CAAssociateContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAEED5A197EBAB1003A5270 /* CAAssociateContentCell.m */; };
+		FAAEED5E197FC57A003A5270 /* NSDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAEED5D197FC57A003A5270 /* NSDictionary.m */; };
 		FADBE1AB19753D2500E22312 /* CABeaconTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FADBE1AA19753D2500E22312 /* CABeaconTableViewCell.m */; };
-		FADBE1B119754BE300E22312 /* CADetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADBE1B019754BE300E22312 /* CADetailsViewController.m */; };
+		FADBE1B119754BE300E22312 /* CADetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FADBE1B019754BE300E22312 /* CADetailsVC.m */; };
 		FAE1AE6F19700A2F0025D438 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE1AE6E19700A2F0025D438 /* Foundation.framework */; };
 		FAE1AE7119700A2F0025D438 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE1AE7019700A2F0025D438 /* CoreGraphics.framework */; };
 		FAE1AE7319700A2F0025D438 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE1AE7219700A2F0025D438 /* UIKit.framework */; };
@@ -18,7 +21,7 @@
 		FAE1AE7B19700A2F0025D438 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE1AE7A19700A2F0025D438 /* main.m */; };
 		FAE1AE7F19700A2F0025D438 /* CAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE1AE7E19700A2F0025D438 /* CAAppDelegate.m */; };
 		FAE1AE8519700A2F0025D438 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE1AE8319700A2F0025D438 /* Main_iPad.storyboard */; };
-		FAE1AE8819700A2F0025D438 /* CAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE1AE8719700A2F0025D438 /* CAViewController.m */; };
+		FAE1AE8819700A2F0025D438 /* CASelectBeaconVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE1AE8719700A2F0025D438 /* CASelectBeaconVC.m */; };
 		FAE1AE8A19700A2F0025D438 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE1AE8919700A2F0025D438 /* Images.xcassets */; };
 		FAE1AE9119700A2F0025D438 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE1AE9019700A2F0025D438 /* XCTest.framework */; };
 		FAE1AE9219700A2F0025D438 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE1AE6E19700A2F0025D438 /* Foundation.framework */; };
@@ -42,10 +45,16 @@
 		FAA445AA1973E80D00FE4B2A /* BeaconTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconTracker.m; sourceTree = "<group>"; };
 		FAA445AC1973E8B800FE4B2A /* Definitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Definitions.h; sourceTree = "<group>"; };
 		FAA445AD1973E8B800FE4B2A /* Definitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Definitions.m; sourceTree = "<group>"; };
+		FAAEED56197EBA9D003A5270 /* CAAvailableContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAAvailableContentCell.h; sourceTree = "<group>"; };
+		FAAEED57197EBA9D003A5270 /* CAAvailableContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAAvailableContentCell.m; sourceTree = "<group>"; };
+		FAAEED59197EBAB1003A5270 /* CAAssociateContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAAssociateContentCell.h; sourceTree = "<group>"; };
+		FAAEED5A197EBAB1003A5270 /* CAAssociateContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAAssociateContentCell.m; sourceTree = "<group>"; };
+		FAAEED5C197FC57A003A5270 /* NSDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary.h; sourceTree = "<group>"; };
+		FAAEED5D197FC57A003A5270 /* NSDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary.m; sourceTree = "<group>"; };
 		FADBE1A919753D2500E22312 /* CABeaconTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CABeaconTableViewCell.h; sourceTree = "<group>"; };
 		FADBE1AA19753D2500E22312 /* CABeaconTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CABeaconTableViewCell.m; sourceTree = "<group>"; };
-		FADBE1AF19754BE300E22312 /* CADetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADetailsViewController.h; sourceTree = "<group>"; };
-		FADBE1B019754BE300E22312 /* CADetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CADetailsViewController.m; sourceTree = "<group>"; };
+		FADBE1AF19754BE300E22312 /* CADetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADetailsVC.h; sourceTree = "<group>"; };
+		FADBE1B019754BE300E22312 /* CADetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CADetailsVC.m; sourceTree = "<group>"; };
 		FAE1AE6B19700A2F0025D438 /* iBeaconCompanionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBeaconCompanionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE1AE6E19700A2F0025D438 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FAE1AE7019700A2F0025D438 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -57,14 +66,16 @@
 		FAE1AE7D19700A2F0025D438 /* CAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAAppDelegate.h; sourceTree = "<group>"; };
 		FAE1AE7E19700A2F0025D438 /* CAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAAppDelegate.m; sourceTree = "<group>"; };
 		FAE1AE8419700A2F0025D438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		FAE1AE8619700A2F0025D438 /* CAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAViewController.h; sourceTree = "<group>"; };
-		FAE1AE8719700A2F0025D438 /* CAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAViewController.m; sourceTree = "<group>"; };
+		FAE1AE8619700A2F0025D438 /* CASelectBeaconVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CASelectBeaconVC.h; sourceTree = "<group>"; };
+		FAE1AE8719700A2F0025D438 /* CASelectBeaconVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CASelectBeaconVC.m; sourceTree = "<group>"; };
 		FAE1AE8919700A2F0025D438 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FAE1AE8F19700A2F0025D438 /* iBeaconCompanionAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBeaconCompanionAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE1AE9019700A2F0025D438 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FAE1AE9819700A2F0025D438 /* iBeaconCompanionAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iBeaconCompanionAppTests-Info.plist"; sourceTree = "<group>"; };
 		FAE1AE9A19700A2F0025D438 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FAE1AE9C19700A2F0025D438 /* iBeaconCompanionAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iBeaconCompanionAppTests.m; sourceTree = "<group>"; };
+		FAF776901976820C00249344 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FAF776921976821600249344 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +124,8 @@
 		FAE1AE6D19700A2F0025D438 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAF776921976821600249344 /* AudioToolbox.framework */,
+				FAF776901976820C00249344 /* AVFoundation.framework */,
 				FAE1AE6E19700A2F0025D438 /* Foundation.framework */,
 				FAE1AE7019700A2F0025D438 /* CoreGraphics.framework */,
 				FAE1AE7219700A2F0025D438 /* UIKit.framework */,
@@ -130,13 +143,19 @@
 				FAA445AD1973E8B800FE4B2A /* Definitions.m */,
 				FAE1AE7D19700A2F0025D438 /* CAAppDelegate.h */,
 				FAE1AE7E19700A2F0025D438 /* CAAppDelegate.m */,
-				FAE1AE8319700A2F0025D438 /* Main_iPad.storyboard */,
-				FADBE1AF19754BE300E22312 /* CADetailsViewController.h */,
-				FADBE1B019754BE300E22312 /* CADetailsViewController.m */,
 				FADBE1A919753D2500E22312 /* CABeaconTableViewCell.h */,
 				FADBE1AA19753D2500E22312 /* CABeaconTableViewCell.m */,
-				FAE1AE8619700A2F0025D438 /* CAViewController.h */,
-				FAE1AE8719700A2F0025D438 /* CAViewController.m */,
+				FADBE1AF19754BE300E22312 /* CADetailsVC.h */,
+				FADBE1B019754BE300E22312 /* CADetailsVC.m */,
+				FAAEED56197EBA9D003A5270 /* CAAvailableContentCell.h */,
+				FAAEED57197EBA9D003A5270 /* CAAvailableContentCell.m */,
+				FAAEED59197EBAB1003A5270 /* CAAssociateContentCell.h */,
+				FAAEED5A197EBAB1003A5270 /* CAAssociateContentCell.m */,
+				FAE1AE8619700A2F0025D438 /* CASelectBeaconVC.h */,
+				FAE1AE8719700A2F0025D438 /* CASelectBeaconVC.m */,
+				FAAEED5C197FC57A003A5270 /* NSDictionary.h */,
+				FAAEED5D197FC57A003A5270 /* NSDictionary.m */,
+				FAE1AE8319700A2F0025D438 /* Main_iPad.storyboard */,
 				FAE1AE8919700A2F0025D438 /* Images.xcassets */,
 				FAE1AE7519700A2F0025D438 /* Supporting Files */,
 			);
@@ -270,13 +289,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAEED5B197EBAB1003A5270 /* CAAssociateContentCell.m in Sources */,
 				FAE1AE7F19700A2F0025D438 /* CAAppDelegate.m in Sources */,
 				FADBE1AB19753D2500E22312 /* CABeaconTableViewCell.m in Sources */,
-				FADBE1B119754BE300E22312 /* CADetailsViewController.m in Sources */,
+				FADBE1B119754BE300E22312 /* CADetailsVC.m in Sources */,
+				FAAEED5E197FC57A003A5270 /* NSDictionary.m in Sources */,
+				FAAEED58197EBA9D003A5270 /* CAAvailableContentCell.m in Sources */,
 				FAA445AE1973E8B800FE4B2A /* Definitions.m in Sources */,
 				FAE1AE7B19700A2F0025D438 /* main.m in Sources */,
 				FAA445AB1973E80D00FE4B2A /* BeaconTracker.m in Sources */,
-				FAE1AE8819700A2F0025D438 /* CAViewController.m in Sources */,
+				FAE1AE8819700A2F0025D438 /* CASelectBeaconVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

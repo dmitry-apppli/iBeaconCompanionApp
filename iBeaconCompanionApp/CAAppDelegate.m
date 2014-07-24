@@ -7,12 +7,22 @@
 //
 
 #import "CAAppDelegate.h"
+#import "CASelectBeaconVC.h"
+#import "CADetailsVC.h"
 
 @implementation CAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+    UINavigationController *leftNavController = [splitViewController.viewControllers objectAtIndex:0];
+    CASelectBeaconVC *leftViewController = (CASelectBeaconVC *)[leftNavController topViewController];
+    CADetailsVC *rightViewController = [splitViewController.viewControllers objectAtIndex:1];
+    
+    leftViewController.delegate = rightViewController;
+    
     return YES;
 }
 							

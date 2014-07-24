@@ -11,6 +11,7 @@
 @protocol BeaconTrackerDelegate <NSObject>
 
 @optional
+
 - (void)immediateAndNearBeaconsReceived: (NSMutableArray *) beacons;
 
 @end
@@ -22,6 +23,7 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) NSMutableArray *beaconsSet;
 @property (strong, nonatomic) NSMutableArray *immediateBeacons;
+
 @property (nonatomic, weak) id <BeaconTrackerDelegate> delegate;
 
 -(NSMutableArray *)sortedBeaconsInOrder: (bool) ascending;

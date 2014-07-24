@@ -6,11 +6,12 @@
 //  Copyright (c) 2014 Apppli ltd. All rights reserved.
 //
 
-#import "CAViewController.h"
+#import "CASelectBeaconVC.h"
 #import "Definitions.h"
 #import "CABeaconTableViewCell.h"
+#import "NSDictionary.h"
 
-@interface CAViewController ()
+@interface CASelectBeaconVC ()
 {
     unsigned int _asyncAction;
 	OSSpinLock _asyncActionLock;
@@ -22,7 +23,7 @@
 
 @end
 
-@implementation CAViewController
+@implementation CASelectBeaconVC
 
 - (void)viewDidLoad
 {
@@ -94,17 +95,13 @@
             case CLProximityNear:
                 distance = @"Near";
                 cell.proximityTextLabel.text =[NSString stringWithFormat: @"Distance: %@", distance];
-                cell.majorMinorTextLabel.text =[NSString stringWithFormat:@"Major: %@ Minor: %@", beacon.major, beacon.minor];;
+                cell.majorMinorTextLabel.text =[NSString stringWithFormat:@"Major: %@ Minor: %@", beacon.major, beacon.minor];
                 cell.beaconIDTextLabel.text = [NSString stringWithFormat:@"Beacon ID: -"];
                 break;
             case CLProximityImmediate:
             {
-                [self increaseAsyncAction];
-                NSThread* myThread = [[NSThread alloc] initWithTarget:self selector:@selector (receiveBeaconIDPrintInCell:)
-                                                               object:@[beacon,cell]];
-                [myThread start];  // Actually create the thread
-               
-                [self decreaseAsyncAction];
+                cell.majorMinorTextLabel.text =[NSString stringWithFormat:@"Major: %@ Minor: %@", beacon.major, beacon.minor];
+                [self receiveBeaconIDPrintInCell:@[beacon,cell]];
                 break;
             }
             default:
@@ -117,22 +114,27 @@
         return nil;
 }
 
--(void) receiveBeaconIDPrintInCell:(NSMutableArray *) args
+-(void) receiveBeaconIDPrintInCell:(NSArray *) args
 {
     CLBeacon *beacon = args[0];
     CABeaconTableViewCell *cell = args[1];
     NSString * HTTPData = [NSString stringWithFormat:@"UUID=%@&Major=%@&Minor=%@&R=%d", beacon.proximityUUID.UUIDString, [beacon.major stringValue], [beacon.minor stringValue], 2];
-    NSLog(@"%@", HTTPData);
-    NSDictionary *jsonReply = [BeaconTracker getParsedJSONFromHTTPRequestUsingPOST:SERVER_ADDRESS Data:HTTPData];
+    //NSLog(@"%@", HTTPData);
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        //Background Thread
+        NSDictionary *jsonReply = [BeaconTracker getParsedJSONFromHTTPRequestUsingPOST:SERVER_ADDRESS Data:HTTPData];
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            //Run UI Updates
+            if([[jsonReply verifiedObjectForKey:@"result"] isEqualToString:@"success"])
+            {
+                cell.proximityTextLabel.text =[NSString stringWithFormat: @"Distance: %@", @"Immediate"];
+                cell.majorMinorTextLabel.text =[NSString stringWithFormat:@"Major: %@ Minor: %@", beacon.major, beacon.minor];;
+                cell.beaconIDTextLabel.text = [NSString stringWithFormat:@"Beacon ID: %@", [jsonReply verifiedObjectForKey:@"BeaconID"]];
+                
+            }
+        });
+    });
     
-    if([[jsonReply objectForKey:@"result"] isEqualToString:@"success"])
-    {
-        cell.proximityTextLabel.text =[NSString stringWithFormat: @"Distance: %@", @"Immediate"];
-        cell.majorMinorTextLabel.text =[NSString stringWithFormat:@"Major: %@ Minor: %@", beacon.major, beacon.minor];;
-        cell.beaconIDTextLabel.text = [NSString stringWithFormat:@"Beacon ID: %@", [jsonReply objectForKey:@"BeaconID"]];
-        
-    }
-    [NSThread exit];
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -144,7 +146,8 @@
     //identifier for each segue.
     
     //Perform a segue.
-    
+    NSUInteger index = [indexPath indexAtPosition:[indexPath length] - 1];;
+    [_delegate didSelectBeacon:[self.beaconsToDraw objectAtIndex:index]];
 //    [self performSegueWithIdentifier:@"beaconSegue"
 //                              sender:[self.beaconsInRange  objectAtIndex:indexPath.row]];
 }

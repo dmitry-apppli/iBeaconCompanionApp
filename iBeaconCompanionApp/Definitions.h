@@ -11,7 +11,7 @@
 #define TEST2_UUID @"31907078-408B-431A-B246-540C12255939"
 #define USED_UUID @"B9407F30-F5F8-466E-AFF9-25556B57FE6D"
 #define ACTIVE_UUID USED_UUID
-#define SERVER_ADDRESS @"http://192.168.1.185/infstr/servero.php"
+#define SERVER_ADDRESS @"http://192.168.1.185/infstr/servern.php"
 @interface Definitions : NSObject
 
 @end
