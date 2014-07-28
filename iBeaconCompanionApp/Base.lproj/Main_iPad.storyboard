@@ -7,7 +7,6 @@
         <!--Select BeaconVC-->
         <scene sceneID="GTm-B6-ggi">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kpz-sv-Vgq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="NqI-Ow-4mn" customClass="CASelectBeaconVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gah-ot-K3y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="768"/>
@@ -61,13 +60,13 @@
                         <outlet property="immediateBeaconsTableView" destination="gah-ot-K3y" id="y69-Cw-oeN"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kpz-sv-Vgq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1372" y="-695"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bvI-a5-S7z">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rpM-8b-fKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="4AP-YV-5az" sceneMemberID="viewController">
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="wRT-lJ-AlO">
@@ -77,13 +76,13 @@
                         <segue destination="NqI-Ow-4mn" kind="relationship" relationship="rootViewController" id="Wpe-sY-Tc5"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rpM-8b-fKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="838" y="-696"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="wYc-e8-d8C">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zHD-Iv-qAn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <splitViewController id="z8p-vM-gcm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -92,13 +91,13 @@
                         <segue destination="QpM-be-T63" kind="relationship" relationship="detailViewController" id="dtu-Px-CnF"/>
                     </connections>
                 </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zHD-Iv-qAn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-144" y="-229"/>
         </scene>
         <!--DetailsVC-->
         <scene sceneID="YlE-8G-qTx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Xs-5m-ieE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="QpM-be-T63" customClass="CADetailsVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lls-OJ-8TR"/>
@@ -113,6 +112,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Xs-5m-ieE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="977" y="-27"/>
         </scene>
