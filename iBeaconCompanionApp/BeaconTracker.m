@@ -12,6 +12,7 @@
 @interface BeaconTracker ()
 @property (strong, nonatomic) NSTimer *closestBeaconTimer;
 @property (strong, nonatomic) CLBeacon *closestBeacon;
+@property (strong, nonatomic) NSMutableArray* beaconsSet;
 
 @end
 

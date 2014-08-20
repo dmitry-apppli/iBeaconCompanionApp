@@ -21,7 +21,7 @@
 
 @property (strong, nonatomic) CLBeaconRegion *beaconRegion;
 @property (strong, nonatomic) CLLocationManager *locationManager;
-@property (strong, nonatomic) NSMutableArray *beaconsSet;
+@property (strong, nonatomic, readonly) NSMutableArray *beaconsSet;
 @property (strong, nonatomic) NSMutableArray *immediateBeacons;
 
 @property (nonatomic, weak) id <BeaconTrackerDelegate> delegate;
